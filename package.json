@@ -1,0 +1,33 @@
+{
+  "name": "vite-dashboard-2024",
+  "version": "0.0.0",
+  "private": true,
+  "description": "try Vite Redux ReactRouter and ECharts",
+  "scripts": {
+    "backend": "npm start --workspace backend",
+    "frontend": "npm run dev --workspace frontend",
+    "lint-staged": "lint-staged",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo Launch npm run backend and npm run frontend"
+  },
+  "author": "Gianluca Casati (http://fibo.github.io/)",
+  "license": "MIT",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "dot-editorconfig": "^1.2.2",
+    "lint-staged": "^15.2.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.{cjs,md,mjs,js,json,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ]
+}
