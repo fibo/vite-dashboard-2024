@@ -8,6 +8,7 @@
     "frontend": "npm run dev --workspace frontend",
     "lint-staged": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "npm run tsc --workspaces --if-present",
     "start": "echo Launch npm run backend and npm run frontend"
   },
   "author": "Gianluca Casati (http://fibo.github.io/)",
@@ -28,6 +29,7 @@
     ]
   },
   "pre-commit": [
+    "tsc",
     "lint-staged"
   ]
 }
