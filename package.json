@@ -31,5 +31,8 @@
   "pre-commit": [
     "tsc",
     "lint-staged"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
 }

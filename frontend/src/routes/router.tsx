@@ -4,6 +4,8 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
+import { getAccount } from "../api";
+
 import Root from "./Root";
 import PageNotFound from "./PageNotFound";
 import Enter from "./Enter";
@@ -13,8 +15,15 @@ import ReportUsers from "./ReportUsers";
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Root />} errorElement={<PageNotFound />}>
+      <Route
+        id="root"
+        path="/"
+        element={<Root />}
+        errorElement={<PageNotFound />}
+        loader={getAccount}
+      >
         <Route path="/report/products" element={<ReportProducts />} />
+
         <Route path="/report/users" element={<ReportUsers />} />
       </Route>
 
