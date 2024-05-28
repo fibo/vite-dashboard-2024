@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.css";
+import { routePath } from "../routes/paths";
 
 export function Sidebar() {
   return (
@@ -14,7 +15,7 @@ export function Sidebar() {
           </li>
 
           <li>
-            <Link to="/report/users" className={`${styles.item} group`}>
+            <Link to={routePath.reportUsers} className={`${styles.item} group`}>
               <svg
                 className={styles.itemIcon}
                 aria-hidden="true"
@@ -29,7 +30,10 @@ export function Sidebar() {
           </li>
 
           <li>
-            <Link to="/report/products" className={`${styles.item} group`}>
+            <Link
+              to={routePath.reportProducts}
+              className={`${styles.item} group`}
+            >
               <svg
                 className={styles.itemIcon}
                 aria-hidden="true"
@@ -44,7 +48,7 @@ export function Sidebar() {
           </li>
 
           <li>
-            <Link to="/enter" className={`${styles.item} group`}>
+            <Link to={routePath.enter} className={`${styles.item} group`}>
               <svg
                 className={styles.itemIcon}
                 aria-hidden="true"

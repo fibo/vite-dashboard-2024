@@ -1,3 +1,3 @@
-export default function ReportUsersPage() {
+export function ReportUsers() {
   return <h1>Users</h1>;
 }

@@ -6,28 +6,30 @@ import {
 
 import { getAccount } from "../api";
 
-import Root from "./Root";
-import PageNotFound from "./PageNotFound";
-import Enter from "./Enter";
-import ReportProducts from "./ReportProducts";
-import ReportUsers from "./ReportUsers";
+import { routePath } from "./paths";
+
+import { Root, rootId } from "./Root";
+import { PageNotFound } from "./PageNotFound";
+import { Enter } from "./Enter";
+import { ReportProducts } from "./ReportProducts";
+import { ReportUsers } from "./ReportUsers";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route
-        id="root"
-        path="/"
+        id={rootId}
+        path={routePath.root}
         element={<Root />}
         errorElement={<PageNotFound />}
         loader={getAccount}
       >
-        <Route path="/report/products" element={<ReportProducts />} />
+        <Route path={routePath.reportProducts} element={<ReportProducts />} />
 
-        <Route path="/report/users" element={<ReportUsers />} />
+        <Route path={routePath.reportUsers} element={<ReportUsers />} />
       </Route>
 
-      <Route path="/enter" element={<Enter />} />
+      <Route path={routePath.enter} element={<Enter />} />
     </>,
   ),
 );

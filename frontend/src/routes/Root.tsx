@@ -1,10 +1,13 @@
 import { Outlet, useRouteLoaderData } from "react-router-dom";
 import { Sidebar } from "../components/Sidebar";
 
-export default function Root() {
-  const { isAuthenticated } = useRouteLoaderData("root") as {
+export const rootId = "root";
+
+export function Root() {
+  const { isAuthenticated } = useRouteLoaderData(rootId) as {
     isAuthenticated: boolean;
   };
+
   return (
     <>
       <Sidebar />

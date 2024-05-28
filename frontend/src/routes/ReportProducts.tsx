@@ -1,3 +1,3 @@
-export default function ReportProductsPage() {
+export function ReportProducts() {
   return <h1>Products</h1>;
 }

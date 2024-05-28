@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom";
 
-export default function PageNotFound() {
+export function PageNotFound() {
   const error = useRouteError();
   console.error(error);
 
