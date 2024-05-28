@@ -1,12 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import { getAccount } from "../api";
 import { LoginForm } from "../components/LoginForm";
+import { routePath } from "./paths";
+
+export async function enterLoader() {
+  const account = await getAccount();
+  if (account.isAuthenticated) return redirect(routePath.root);
+  return null;
+}
 
 export function Enter() {
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Link
-          to="/"
+          to={routePath.root}
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
         >
           <img className="w-8 h-8 mr-2" src="/vite.svg" alt="logo" />

@@ -1,7 +1,10 @@
 import { Outlet, useRouteLoaderData } from "react-router-dom";
+import { getAccount } from "../api";
 import { Sidebar } from "../components/Sidebar";
 
 export const rootId = "root";
+
+export const rootLoader = getAccount;
 
 export function Root() {
   const { isAuthenticated } = useRouteLoaderData(rootId) as {

@@ -4,13 +4,11 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { getAccount } from "../api";
-
 import { routePath } from "./paths";
 
-import { Root, rootId } from "./Root";
+import { Root, rootId, rootLoader } from "./Root";
 import { PageNotFound } from "./PageNotFound";
-import { Enter } from "./Enter";
+import { Enter, enterLoader } from "./Enter";
 import { ReportProducts } from "./ReportProducts";
 import { ReportUsers } from "./ReportUsers";
 
@@ -19,17 +17,17 @@ export const router = createBrowserRouter(
     <>
       <Route
         id={rootId}
-        path={routePath.root}
         element={<Root />}
         errorElement={<PageNotFound />}
-        loader={getAccount}
+        loader={rootLoader}
+        path={routePath.root}
       >
-        <Route path={routePath.reportProducts} element={<ReportProducts />} />
+        <Route element={<ReportProducts />} path={routePath.reportProducts} />
 
-        <Route path={routePath.reportUsers} element={<ReportUsers />} />
+        <Route element={<ReportUsers />} path={routePath.reportUsers} />
       </Route>
 
-      <Route path={routePath.enter} element={<Enter />} />
+      <Route element={<Enter />} loader={enterLoader} path={routePath.enter} />
     </>,
   ),
 );
