@@ -1,7 +1,29 @@
-import { Link, redirect } from "react-router-dom";
-import { getAccount } from "../api";
+import { Link, LoaderFunctionArgs, redirect } from "react-router-dom";
+import { getAccount, postEnter } from "../api";
 import { LoginForm } from "../components/LoginForm";
+import { localWebStorage } from "../storages/webstorage";
 import { routePath } from "./paths";
+
+export async function enterAction({ request }: LoaderFunctionArgs) {
+  // TODO send crendentials
+  const formData = await request.formData();
+  console.log(formData);
+
+  try {
+    const { token } = await postEnter();
+    if (!token)
+      return {
+        error: "Invalid email or password",
+      };
+    localWebStorage.authenticationToken = token;
+    return redirect(routePath.root);
+  } catch (error) {
+    console.error(error);
+    return {
+      error: "Something went wrong",
+    };
+  }
+}
 
 export async function enterLoader() {
   const account = await getAccount();

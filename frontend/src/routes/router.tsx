@@ -8,7 +8,7 @@ import { routePath } from "./paths";
 
 import { Root, rootId, rootLoader } from "./Root";
 import { PageNotFound } from "./PageNotFound";
-import { Enter, enterLoader } from "./Enter";
+import { Enter, enterAction, enterLoader } from "./Enter";
 import { ReportProducts } from "./ReportProducts";
 import { ReportUsers } from "./ReportUsers";
 
@@ -27,7 +27,12 @@ export const router = createBrowserRouter(
         <Route element={<ReportUsers />} path={routePath.reportUsers} />
       </Route>
 
-      <Route element={<Enter />} loader={enterLoader} path={routePath.enter} />
+      <Route
+        action={enterAction}
+        element={<Enter />}
+        loader={enterLoader}
+        path={routePath.enter}
+      />
     </>,
   ),
 );
