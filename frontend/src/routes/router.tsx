@@ -9,6 +9,8 @@ import { routePath } from "./paths";
 import { Root, rootId, rootLoader } from "./Root";
 import { PageNotFound } from "./PageNotFound";
 import { Enter, enterAction, enterLoader } from "./Enter";
+
+import { Dashboard } from "./Dashboard";
 import { ReportProducts } from "./ReportProducts";
 import { ReportUsers } from "./ReportUsers";
 
@@ -22,6 +24,8 @@ export const router = createBrowserRouter(
         loader={rootLoader}
         path={routePath.root}
       >
+        <Route element={<Dashboard />} index />
+
         <Route element={<ReportProducts />} path={routePath.reportProducts} />
 
         <Route element={<ReportUsers />} path={routePath.reportUsers} />

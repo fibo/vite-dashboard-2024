@@ -8,6 +8,7 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "echarts": "^5.5.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
