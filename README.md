@@ -12,3 +12,4 @@
 - [ReactRouter](https://github.com/fibo/vite-dashboard-2024/tree/ReactRouter): Setup [React Router](https://reactrouter.com/) with two pages: Home and Enter.
 - [Tailwind](https://github.com/fibo/vite-dashboard-2024/tree/Tailwind): Add [Tailwind](https://tailwindcss.com/) and improve React Router with suggestions from [React Router `v6.23.1` tutorial](https://reactrouter.com/en/6.23.1/start/tutorial)
 - [authentication](https://github.com/fibo/vite-dashboard-2024/tree/authentication): implements dummy authentication
+- [charts](https://github.com/fibo/vite-dashboard-2024/tree/charts): add [Apache Echarts](https://echarts.apache.org/)
