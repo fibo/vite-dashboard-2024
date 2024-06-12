@@ -16,7 +16,7 @@ export const getAccount = async () => {
   return data;
 };
 
-export const postEnter = async () => {
-  const { data } = await api.post("/enter");
+export const postEnter = async (email: string, password: string) => {
+  const { data } = await api.post("/enter", { email, password });
   return data;
 };

@@ -5,12 +5,13 @@ import { localWebStorage } from "../storages/webstorage";
 import { routePath } from "./paths";
 
 export async function enterAction({ request }: LoaderFunctionArgs) {
-  // TODO send crendentials
   const formData = await request.formData();
-  console.log(formData);
 
   try {
-    const { token } = await postEnter();
+    const { token } = await postEnter(
+      formData.get("email") as string,
+      formData.get("password") as string,
+    );
     if (!token)
       return {
         error: "Invalid email or password",
